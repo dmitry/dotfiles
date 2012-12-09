@@ -1,0 +1,9 @@
+Host *                                                                         
+  TCPKeepAlive yes                                                             
+  ServerAliveInterval 60                                                       
+  ControlMaster auto                                                           
+  ControlPath ~/.ssh/connections/%r_%h_%p    
+  ControlPersist 1h
+
+#ssh -fN git@github.com    # for github
+#ssh -fN hg@bitbucket.org  # for bitbucket
