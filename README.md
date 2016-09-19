@@ -2,3 +2,14 @@ dotfiles
 ========
 
 My greatest dotfiles that help me to live in dev world
+
+## Docker
+
+```
+dcleanup(){
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+```
+
+From here: http://stackoverflow.com/questions/32723111/how-to-remove-old-and-unused-docker-images
